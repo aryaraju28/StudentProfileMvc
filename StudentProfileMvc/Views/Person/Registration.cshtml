@@ -1,0 +1,82 @@
+﻿@model StudentProfileMvc.Models.Person
+@{
+    ViewBag.Title = "Registration";
+}
+<html>
+<head>
+<title>HTML Table</title>
+</head>
+<body>
+
+    <h2>Registration</h2>
+
+    @using (Html.BeginForm("Registration1", "Person"))
+    {
+        <table border="1">
+            <tr>
+                <td>
+                    Name
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.Name)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Gender
+                </td>
+                <td>
+                    Male @Html.RadioButtonFor(m => m.Gender, "Male")
+                    Female @Html.RadioButtonFor(m => m.Gender, "Female")
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Education
+                </td>
+                <td>
+                    @Html.DropDownListFor(m => m.Education, new List<SelectListItem>
+                        {
+                        new SelectListItem{Text="Ug", Value="Ug"},
+                        new SelectListItem{Text="Pg",Value="Pg"},
+                         new SelectListItem{Text="+2",Value="+2"},
+                          new SelectListItem{Text="10",Value="10"}
+
+                        }, "SelectItem");
+                </td>
+            </tr>
+
+
+
+        </table>
+        <input type="submit" value="Submit" />
+    }
+
+
+
+
+    @*<label>Name</label> @Html.TextBoxFor(m => m.Name)<br/>*@
+    @*<label>Gender</label>
+        <label>Male</label>@Html.RadioButtonFor(m=>m.Gender,"Male")*@
+    @*<label>Female</label>@Html.RadioButtonFor(m=>m.Gender,"Female")<br/>*@
+    @*<label>Education</label> @Html.DropDownListFor(m => m.Education, new List<SelectListItem>
+        {
+        new SelectListItem{Text="Ug", Value="Ug"},
+        new SelectListItem{Text="Pg",Value="Pg"},
+         new SelectListItem{Text="+2",Value="+2"},
+          new SelectListItem{Text="10",Value="10"}
+
+        }, "SelectItem");<br/>*@
+    @*<label>Hobbles</label>*@
+
+    @*<label>Singing</label>@Html.CheckBoxFor(m=>m.Singing,)
+        <label>Dancing</label>@Html.CheckBoxFor(m=>m.Dancing)*@
+    @*<label>Singing</label> @Html.CheckBoxFor(m=>m.Hobbies,new { @checked= true})
+
+        <label>Dancing</label>  @Html.CheckBoxFor(m=>m.Hobbies,"Dancing")*@
+
+
+
+
+
+
